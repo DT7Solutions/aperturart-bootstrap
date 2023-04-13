@@ -1,0 +1,223 @@
+
+ /* .main-header {
+    background-color: rgba(253, 252, 252, 0.8);
+}  */
+.nav-active {
+    background-color:#fff !important;
+    
+    z-index: 10000;
+  }
+ 
+.logo img{
+    margin-top: -22px !important;
+}
+
+/* .nav-bg-color.scrolled{
+     background-color: white !important;
+
+} */
+
+.about-content .about-text{
+    color: white !important;
+    float: right !important;
+}
+.why-us figure img{
+    height: 400px !important;
+    width: 100% !important;
+    border-radius: 4px;
+    text-align: justify;
+}
+.jewellery-section{
+    margin-top: -100px !important;
+}
+.f_B-section{
+    margin-top: -100px !important;
+}
+
+#contact .form-control{
+    border-radius: 5px !important;
+}
+#form-submit{
+    /* background-color: black; */
+    color: white !important;
+    border-radius: 5px !important;
+    background: transparent;
+    border: 2px solid whitesmoke;
+    
+}
+#form-submit:hover{
+    background: linear-gradient(45deg, #e63785 0%, #60c5e0 100%);
+    color: white !important;
+    border-radius: 5px !important;
+    border: 2px solid whitesmoke;
+}
+
+.header-text h2{
+    font-size: 72px;
+  background: -webkit-linear-gradient(90deg, rgba(198,53,112,1) 5%, rgba(156,100,148,0.9304096638655462) 54%, rgba(70, 108, 163, 0.967) 94%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header-text h5{
+ color: rgb(9, 95, 145);
+ margin-top: -25px !important;
+ margin-bottom: 20px !important;
+}
+
+
+.service-list .card{
+    background-color: #60c5e0 !important;
+    min-height: 290px !important;
+    margin-left: 10px !important;
+    text-align: center !important;
+    font-weight: 600 !important;
+}
+.service-list .card:hover{
+    background-image: linear-gradient(to right, rgba(198,53,112,1)5%,rgba(156,100,148,0.9304096638655462)54%,rgba(70, 108, 163, 0.967)94%);
+    color: whitesmoke;
+}
+.service-list2 .card{
+    background-color: #60c5e0 !important;
+    height: 290px !important;
+    margin-left: 10px !important;
+    text-align: center !important;
+    font-weight: 600 !important;
+    
+}
+.service-list2 .card:hover{
+    background-image: linear-gradient(to right, rgba(198,53,112,1)5%,rgba(156,100,148,0.9304096638655462)54%,rgba(70, 108, 163, 0.967)94%);
+    color: whitesmoke;
+    
+}
+
+
+.footer-section{
+    background-color: black !important;
+    height: 60vh !important;
+    color: whitesmoke !important;
+  }
+
+  .social-links{
+    display: flex;
+    /* justify-content: center;
+    align-items: center !important; */
+    flex-direction: row;
+    padding: 10px !important;
+  }
+
+  .social-links .fab {
+    font-size: 25px !important;
+    margin-right: 20px !important;
+  }
+  .social-links .fab:hover{
+    color: #af1072;
+    transform: scale(1.1);
+    transition: 0.5s;
+  }
+  .fa-facebook {
+    margin-left: -20px !important;
+  }
+  .footer-col-1  h2{
+    font-weight: 800;
+    color: #af1072 !important;
+    
+  }
+  .footer-col-1  h3{
+    font-weight: 600;
+  }
+
+  .subscripe-labele {
+    margin-top: -10px !important;
+    margin-bottom: -10px !important;
+  }
+  .sub-form button:hover{
+    background-image: linear-gradient(to right, rgba(198,53,112,1)5%,rgba(156,100,148,0.9304096638655462)54%,rgba(70, 108, 163, 0.967)94%);
+    color: whitesmoke !important;
+
+    transition: opacity 250ms 300ms;
+    
+  } 
+
+  .find-us .map_link a {
+    color: #fff;
+  }
+  .find-us .map_link a:hover {
+    color:rgba(198,53,112,1);
+  }
+  .find-us a{
+    color: whitesmoke;
+  }
+  /* .find-us a:hover{
+    color:rgba(198,53,112,1);
+  } */
+  .fa-whatsapp {
+    color: rgb(18, 94, 18);
+    font-weight: 600;
+    font-size: 25px !important;
+  }
+
+  /* .footer-section11 .sec-1,.sec-2,.sec-3 {
+  padding-top: min(-20px) !important;
+  } */
+
+  .sec-2 span a {
+    color:  #fff !important;
+  }
+  .sec-2 span:hover a:hover {
+    color:rgba(198,53,112,1) !important;
+  }
+  .sec-3 .whates:hover {
+    color:rgba(198,53,112,1) !important;
+  }
+
+
+
+  
+/* @media screen and (max-width: 450px) {
+  .service-list .card{
+    width: 24rem !important;
+  }
+
+} */
+
+/*
+flip card
+*/
+.card-flip > div {
+  backface-visibility: hidden;
+  transition: transform 300ms;
+  transition-timing-function: linear;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+  background-color: #60c5e0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  background-image: linear-gradient(to right, rgba(198,53,112,1)5%,rgba(156,100,148,0.9304096638655462)54%,rgba(70, 108, 163, 0.967)94%);
+}
+
+.card-flip:hover .card-front {
+  transform: rotateY(-180deg);
+}
+  
+.card-flip:hover .card-back {
+  transform: rotateY(0deg);
+}
+.card-flip .card-title {
+  color: #ffffff;
+  font-weight: 600;
+
+}

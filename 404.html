@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AperturArt-404</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, rgb(236, 138, 195) 0%, rgb(109, 208, 212) 71%);
+            
+        }
+        .page-text{
+            color: red;
+        }
+        .page-notfound{
+            height: 100vh;
+            width: 100%;
+            margin-top: -22px; 
+           
+        }
+        .page-section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 250px !important;
+            color: whitesmoke;
+        }
+        .error-text{
+            text-align: center;
+            font-weight: 600;
+            font-size: 60px !important;
+        }
+        .font-default{
+            margin-top: -20px !important;
+            margin-bottom: 10px;
+            font-size: 25px !important;
+            text-align: center;
+        }
+        .row img{
+            height: 150px !important;
+            width: 150px !important;
+            margin-top: -250px !important;      
+        }
+      .group-lg{
+       display: inline-flex;
+       justify-content: center;
+       align-items: center;
+      }
+
+      .home-btn{
+        border: 2px solid rgb(3, 3, 3) !;
+      }
+    </style>
+</head>
+<body>
+    <div class="page-notfound">
+    <main class="page-content">
+        <section class="page-section">
+            <div class="row">
+                <!-- <img src="/apertur/static/assets/images/logo.png" alt="no image found"> -->
+                <div class="col-md-12">
+                    <h4 class="font-default">Sorry, but the page was not found</h4>
+                    <!-- <hr class="hr divider-sm bg-primary-lighter"> -->
+                    <p class="text-extra-large text-light error-text">404</p>
+                    <p class="margin-t20 small-content">You may have mistyped the address or the page may have moved</p>
+                    <div class="group-lg margin-t40" style="margin-left: 120px !important;">
+                        <a class="btn btn-warning btn-lg icon-set px-4" href="http://127.0.0.1:8000/" style="color:white;"><i class="fa fa-shopping-bag"></i> Back To Home Page</a> 
+                        <!-- <a class="btn btn-primary btn-lg icon-set" href="http://127.0.0.1:8000/contact/"><i class="fa fa-heart"></i>  Contact Us</a> -->
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    </div>
+</body>
+</html>
