@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="static/assets/css/style.css">
     <link rel="stylesheet" href="sweetalert2.min.css">
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <!--
     
@@ -424,8 +423,16 @@ https://templatemo.com/tm-557-grad-school
                   <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
                 </fieldset>
               </div>
-              <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
-              <div class="g-recaptcha px-3 mb-5" data-sitekey="6Lfgj00jAAAAAC0giK_HzP_y-WdN4CrYTbz67og1" required></div>
+<!-- 
+              site-key--- 6LeRAVgjAAAAAAYVZhdlh6yAt_SKizQEMghVbzIP
+              site-key--- 6Ld5LU0jAAAAAGM-5e1btm6c7Hmel16UCnuus8Nw
+              site-key--- 6Lfej00jAAAAAGnrsH3jPQNGq-yOA_5s_tILqBRh
+              site-key--- 6Lfgj00jAAAAAC0giK_HzP_y-WdN4CrYTbz67og1
+              site-key--- 6LeWblcjAAAAAFMmEH5RmmcrYua2Zl0qhvzOwi2_ -->
+              
+
+              <script src='https://www.google.com/recaptcha/api.js'></script>
+              <div class="g-recaptcha px-3 mb-5" data-sitekey="6Ld5LU0jAAAAAGM-5e1btm6c7Hmel16UCnuus8Nw" required></div>
               <div class="col-md-12">
                 <fieldset class="d-flex justify-content-center align-items-center">
                   <button type="submit" id="form-submit" class="button">Send Message Now</button>
