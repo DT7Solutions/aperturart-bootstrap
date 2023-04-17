@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="static/assets/css/lightbox.css">
     <link rel="stylesheet" href="static/assets/css/style.css">
     <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
 
 
 <!--
@@ -396,7 +397,7 @@ https://templatemo.com/tm-557-grad-school
           
         </div>
         <div class="col-md-12">         
-          <form id="contact-form" action="" method="post" autocomplete="on">
+          <form name="contact-form" id="contact-form" action="" method="post" autocomplete="on">
            
               <p class="form-text text-center" style="color:whitesmoke; font-size:15px;">Drop us a line, or give us a heads up if you're interested in chatting with us.</p>
             
@@ -435,7 +436,7 @@ https://templatemo.com/tm-557-grad-school
               <div class="g-recaptcha px-3 mb-5" data-sitekey="6Ld5LU0jAAAAAGM-5e1btm6c7Hmel16UCnuus8Nw" required></div>
               <div class="col-md-12">
                 <fieldset class="d-flex justify-content-center align-items-center">
-                  <button type="submit" id="form-submit" class="button">Send Message Now</button>
+                  <button type="submit" id="form-submit" class="button"onclick="hello()">Send Message Now</button>
                 </fieldset>
               </div>
             </div>
