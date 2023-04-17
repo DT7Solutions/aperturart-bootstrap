@@ -1,58 +1,25 @@
 
-let contactform = document.querySelector('#contact-form');
-// let submit_btn = document.querySelector('#submit');
-let inputs = document.querySelectorAll('input')
-let textariea = document.querySelector('textarea')
-contactform.addEventListener('submit', function(event){
-          event.preventDefault();
-          $.ajax({
-            type:'POST',
-            url:'/',
-            data:{
-              name:$("#name").val(),
-              email:$("#email").val(),
-              subject:$("#subject").val(),
-              message:$("#message").val(),
-              csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
-            },
-            success: function(data) {
-         
-              swal("success", "Your Message was sending successfully ", "success");
-            
-            },
-            error: function(xhr, status, error) {
-              swal("error!", "Please Try Agian", "error");
-            
-            },
-            dataType: 'text'
-        })
-        inputs.forEach(input => input.value = '');
-        textariea.value =''
-}) 
-
-
-
-let subscribeform = document.querySelector('#subscribe_form');
-subscribeform.addEventListener('submit', function(event){
-          event.preventDefault();
-          $.ajax({
-            type:'POST',
-            url:'/',
-            data:{
-              email:$("#email").val(),
-              csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
-            },
-            success: function(data) {
-         
-              swal("success", "Your Message was sending successfully ", "success");
-            
-            },
-            error: function(xhr, status, error) {
-              swal("error!", "Please Try Agian", "error");
-            
-            },
-            dataType: 'text'
-        })
-        inputs.forEach(input => input.value = '');
-      
-}) 
+function hello(){
+  // event.preventdefult();
+  debugger
+  let fname = document.querySelector('#name').value;
+  let email = document.querySelector('#email').value;
+  let subject = document.querySelector('#subject').value;
+  let message = document.querySelector('#message').value;
+  
+  let mes = "Name:" + fname + "<br/> For email:" +  email + "<br/> Subject:" + subject + "<br/> Message:" + message
+   
+  Email.send({
+      Host : "smtp.elasticemail.com",
+      Username : "aperturart@gmail.com",
+      Password : "6F7C8AC4D52994A9B70E2EB933EB0D7BE19B",
+      To : 'priya4241honey@gmail.com',
+      From : "aperturart@gmail.com",
+      Subject : subject,
+      Body : mes
+  }).then(
+    alert("sucessfully sending email!")
+  );
+  
+}
+    
