@@ -122,3 +122,170 @@
 })(jQuery);
 
 
+
+let currentStep = 1;
+
+function showStep(stepNumber) {
+    document.querySelectorAll('.step').forEach(step => {
+        step.style.display = 'none';
+        step.style.flexDirection = 'column';
+    });
+    document.getElementById(`step${stepNumber}`).style.display = 'flex';
+}
+
+function nextStep() {
+    currentStep++;
+    showStep(currentStep);
+}
+
+function validateStep1() {
+    const starRating = document.querySelector('.star-rating').getAttribute('data-rating');
+    const feedback = document.querySelector('.feedback-options button.active');
+    const starErrorMessage = document.querySelector('.star-error-message');
+    const feedbackErrorMessage = document.querySelector('.feedback-error-message');
+
+    if (starRating !== '') {
+        starErrorMessage.style.display = 'none';
+    } else {
+        starErrorMessage.textContent = 'Please rate our services.';
+        starErrorMessage.style.display = 'block';
+    }
+    if (feedback !== null) {
+        feedbackErrorMessage.style.display = 'none';
+    } else {
+        feedbackErrorMessage.textContent = 'Please provide feedback.';
+        feedbackErrorMessage.style.display = 'block';
+    }
+    if (starRating !== '' && feedback !== null) {
+        nextStep();
+    }
+}
+
+function validateStep2() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const nameErrorMessage = document.querySelector('.name-error-message');
+    const emailErrorMessage = document.querySelector('.email-error-message');
+    const phoneErrorMessage = document.querySelector('.phone-error-message');
+
+    if (name !== '') {
+        nameErrorMessage.style.display = 'none';
+    } else {
+        nameErrorMessage.textContent = 'Please enter your name.';
+        nameErrorMessage.style.display = 'block';
+    }
+    if (email !== '') {
+        emailErrorMessage.style.display = 'none';
+    } else {
+        emailErrorMessage.textContent = 'Please enter a valid email address.';
+        emailErrorMessage.style.display = 'block';
+    }
+    if (phone !== '') {
+        phoneErrorMessage.style.display = 'none';
+    } else {
+        phoneErrorMessage.textContent = 'Please enter your phone number.';
+        phoneErrorMessage.style.display = 'block';
+    }
+    if (name !== '' && email !== '' && phone !== '') {
+        nextStep();
+    }
+}
+
+function submitForm() {
+    const feedbackData = {
+        "rating": document.querySelector('.star-rating').getAttribute('data-rating'),
+        "feedback": document.querySelector('.feedback-options button.active').getAttribute('data-value'),
+        "name": document.getElementById('name').value,
+        "email": document.getElementById('email').value,
+        "phone": document.getElementById('phone').value,
+        "feedbackText": document.getElementById('feedback').value,
+        "suggestions": document.getElementById('suggestions').value
+    };
+
+    console.log(JSON.stringify(feedbackData));
+
+    const confirmationMessage = document.querySelector('.confirmation-message');
+    const errorSubmitMessage = document.querySelector('.feedback-submit-error');
+
+    if (Object.values(feedbackData).every(value => value !== "")) {
+        confirmationMessage.textContent = 'Thank you for your feedback!';
+        confirmationMessage.style.display = 'block';
+        errorSubmitMessage.style.display = 'none';
+        
+		const serviceID = "service_acvejvb";
+		const templateID = "template_hzgo3kx";
+		// emailjs.send("Service_ID", "Template_ID", formData)
+        emailjs.send(serviceID, templateID, feedbackData)
+            .then(function(response) {
+                console.log('Email sent successfully:', response.status, response.text);
+                alert("Thank you, " + feedbackData.name + "! Your message has been sent successfully.");
+				// document.getElementById('feedbackForm').reset();
+				// Manually reset form fields
+				document.getElementById('name').value = '';
+				document.getElementById('email').value = '';
+				document.getElementById('phone').value = '';
+				document.getElementById('feedback').value = '';
+				document.getElementById('suggestions').value = '';
+				document.querySelector('.star-rating').setAttribute('data-rating', '');
+				document.querySelectorAll('.star-rating .star').forEach(star => star.classList.remove('selected'));
+				document.querySelectorAll('.feedback-options button').forEach(button => button.classList.remove('active'));
+            }, function(error) {
+                console.error("Email sending failed:", error);
+                alert("Sorry ...!, " + feedbackData.name + ". Oops! Something went wrong. Please try again later.");
+            });
+    } else {
+        errorSubmitMessage.textContent = 'Error: Please fill in all fields.';
+        errorSubmitMessage.style.display = 'block';
+        confirmationMessage.style.display = 'none';
+    }
+
+    currentStep = 4;
+    showStep(currentStep);
+
+    setTimeout(function () {
+        currentStep = 1;
+        showStep(currentStep);
+        document.querySelectorAll('.error-message').forEach(message => {
+            message.style.display = 'none';
+        });
+        document.querySelectorAll('.star-rating, .feedback-options, input[type="text"], input[type="email"], input[type="tel"], textarea').forEach(element => {
+            element.style.borderColor = '#ccc';
+        });
+        confirmationMessage.style.display = 'none';
+        errorSubmitMessage.style.display = 'none';
+    }, 5000);
+}
+
+document.querySelectorAll('.star-rating .star').forEach(star => {
+    star.addEventListener('click', function () {
+        const value = parseInt(this.getAttribute('data-value'));
+        const stars = document.querySelectorAll('.star-rating .star');
+        stars.forEach((s, index) => {
+            if (index < value) {
+                s.classList.add('selected');
+            } else {
+                s.classList.remove('selected');
+            }
+        });
+        document.querySelector('.star-rating').setAttribute('data-rating', value.toString());
+    });
+});
+
+document.querySelectorAll('.feedback-options button').forEach(button => {
+    button.addEventListener('click', function () {
+        document.querySelectorAll('.feedback-options button').forEach(b => {
+            b.classList.remove('active');
+        });
+        this.classList.add('active');
+    });
+});
+
+document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea').forEach(input => {
+    input.addEventListener('input', function () {
+        this.style.borderColor = '#007bff';
+        const errorMessage = this.parentElement.querySelector('.error-message');
+        errorMessage.textContent = '';
+        errorMessage.style.display = 'none';
+    });
+});

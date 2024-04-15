@@ -221,3 +221,165 @@ flip card
   font-weight: 600;
 
 }
+
+
+
+.contactform-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 25%;
+  padding: 2.5%;
+  background-color: transparent;
+}
+
+.contactform-container .step {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.contactform-container .step:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactform-container .form-heading {
+  text-align: center;
+}
+
+.contactform-container .form-heading,
+.contactform-container label{
+  color: white;
+}
+.contactform-container input[type="text"],
+.contactform-container input[type="email"],
+.contactform-container input[type="tel"],
+.contactform-container textarea,
+.contactform-container input::placeholder,
+.contactform-container textarea::placeholder {
+  color: #d3d3d3;
+}
+
+.contactform-container .star-rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.contactform-container .star-rating .star {
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.contactform-container .star-rating .star.selected {
+  color: #f0ad4e;
+}
+
+.contactform-container .feedback-options {
+  display: flex;
+  justify-content: center;
+}
+
+.contactform-container .feedback-options button {
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 5%;
+}
+
+.contactform-container .feedback-options button.active {
+  background-color: #f0ad4e;
+}
+
+.contactform-container textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  margin-bottom: 10px;
+  min-height: 100% !important;
+  height: 100px !important;
+}
+
+.contactform-container textarea,
+.contactform-container input[type="text"],
+.contactform-container input[type="email"],
+.contactform-container input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.contactform-container textarea:focus,
+.contactform-container input[type="text"]:focus,
+.contactform-container input[type="email"]:focus,
+.contactform-container input[type="tel"]:focus {
+  border-color: #007bff;
+}
+
+.contactform-container button {
+  display: block;
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.contactform-container button:hover {
+  background-color: #0056b3;
+}
+
+.contactform-container .g-recaptcha {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.error-message {
+  margin-top: 5px;
+  color: red;
+}
+
+.contactform-container .confirmation {
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.contactform-container .confirmation i {
+  display: block;
+  font-size: 200px !important;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.contactform-container .confirmation h2 {
+  margin-top: 10px;
+  color: #28a745;
+}
+
+.contactform-container .confirmation p {
+  color: #28a745;
+}
+
+@media screen and (max-width: 992px) {
+  .contactform-container {
+    margin: 0 15%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contactform-container {
+    margin: 0 0%;
+  }
+}

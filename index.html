@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="sweetalert2.min.css">
     <script src=" https://smtpjs.com/v3/smtp.js"></script>
 
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
 <!--
     
@@ -396,8 +401,64 @@ https://templatemo.com/tm-557-grad-school
           </div>
           
         </div>
-        <div class="col-md-12">         
-          <form name="contact-form" id="contact-form" action="" method="post" autocomplete="on">
+        <div class="col-md-12 d-flex align-items-center">
+          <div class="contactform-container">
+            <form id="feedbackForm">
+              <div class="step" id="step1">
+                <h2 class="form-heading">Rate Us</h2>
+                <div class="star-rating" data-rating="">
+                  <span class="star" data-value="1">★</span>
+                  <span class="star" data-value="2">★</span>
+                  <span class="star" data-value="3">★</span>
+                  <span class="star" data-value="4">★</span>
+                  <span class="star" data-value="5">★</span>
+                </div>
+                <div class="error-message star-error-message" style="display: none;"></div>
+                <h2 class="form-heading">Feedback Us</h2>
+                <div class="feedback-options">
+                  <button type="button" data-value="verybad">😡</button>
+                  <button type="button" data-value="bad">😔</button>
+                  <button type="button" data-value="satisfied">😐</button>
+                  <button type="button" data-value="good">😊</button>
+                  <button type="button" data-value="verygood">😄</button>
+                </div>
+                <div class="error-message feedback-error-message" style="display: none;"></div>
+                <button type="button" onclick="validateStep1()">Next</button>
+              </div>
+              <div class="step" id="step2">
+                <h2 class="form-heading">Personal Details</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+                <div class="error-message name-error-message" style="display: none;"></div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <div class="error-message email-error-message" style="display: none;"></div>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone">
+                <div class="error-message phone-error-message" style="display: none;"></div>
+                <button type="button" onclick="validateStep2()">Next</button>
+              </div>
+              <div class="step" id="step3">
+                <h2 class="form-heading">Feedback & Suggestions</h2>
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" name="feedback" placeholder="Enter your feedback"></textarea>
+                <label for="suggestions">Suggestions:</label>
+                <textarea id="suggestions" name="suggestions" placeholder="Enter your suggestions"></textarea>
+                <script src='https://www.google.com/recaptcha/api.js'></script>
+                <div class="g-recaptcha px-3 mb-5" data-sitekey="6Ld5LU0jAAAAAGM-5e1btm6c7Hmel16UCnuus8Nw" required></div>
+                <div class="error-message feedback-submit-error" style="display: none;"></div>
+                <button type="button" onclick="submitForm()">Submit</button>
+              </div>
+              <div class="step" id="step4">
+                <div class="confirmation">
+                  <i class="fas fa-check-circle"></i>
+                  <h2 class="form-heading">Thank You!</h2>
+                  <p class="confirmation-message">Your feedback has been submitted successfully.</p>
+                </div>
+              </div>
+            </form>
+          </div>
+          <form class="d-none" name="contact-form" id="contact-form" action="" method="post" autocomplete="on">
            
               <p class="form-text text-center" style="color:whitesmoke; font-size:15px;">Drop us a line, or give us a heads up if you're interested in chatting with us.</p>
             
@@ -536,6 +597,23 @@ https://templatemo.com/tm-557-grad-school
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <!-- Email JS Contact Form CDN Link-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // emailjs.init("Account Public Key");
+            emailjs.init("wQLLu5EIf_vaDRf6y");
+        })();
+    </script>
+
     <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');

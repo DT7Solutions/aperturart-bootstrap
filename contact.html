@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <form id="feedbackForm">
+      <div class="step" id="step1">
+        <h2>Step 1: Rate Our Services</h2>
+        <div class="star-rating" data-rating="">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
+        <div class="feedback-options">
+          <button type="button" data-value="😡">😡</button>
+          <button type="button" data-value="😔">😔</button>
+          <button type="button" data-value="😐">😐</button>
+          <button type="button" data-value="😊">😊</button>
+          <button type="button" data-value="😄">😄</button>
+        </div>
+        <button type="button" onclick="validateStep1()">Next</button>
+      </div>
+      <div class="step" id="step2">
+        <h2>Step 2: Personal Details</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <button type="button" onclick="validateStep2()">Next</button>
+      </div>
+      <div class="step" id="step3">
+        <h2>Step 3: Feedback & Suggestions</h2>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback"></textarea>
+        <label for="suggestions">Suggestions:</label>
+        <textarea id="suggestions" name="suggestions"></textarea>
+        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+        <button type="button" onclick="submitForm()">Submit</button>
+      </div>
+      <div class="step" id="step4">
+        <h2>Step 4: Confirmation</h2>
+        <p>Thank you for your feedback!</p>
+      </div>
+    </form>
+  </div>
+  <style>
+    /* Existing CSS remains unchanged */
+
+.star-rating {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.star-rating .star {
+  color: #ccc;
+}
+
+.feedback-options {
+  margin-top: 10px;
+}
+
+.feedback-options button {
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.feedback-options button:hover {
+  transform: scale(1.2);
+}
+
+  </style>
+  <script>
+    let currentStep = 1;
+
+function nextStep() {
+  const currentStepDiv = document.getElementById(`step${currentStep}`);
+  currentStepDiv.style.display = "none";
+  currentStep++;
+  const nextStepDiv = document.getElementById(`step${currentStep}`);
+  if (nextStepDiv) {
+    nextStepDiv.style.display = "block";
+  }
+}
+
+function validateStep1() {
+  const starRating = document.querySelector('.star-rating').getAttribute('data-rating');
+  const feedback = document.querySelector('.feedback-options button.active');
+  
+  if (starRating !== '' && feedback !== null) {
+    nextStep();
+  } else {
+    alert("Please rate our services and provide feedback.");
+  }
+}
+
+function validateStep2() {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  
+  if (name !== '' && email !== '' && phone !== '') {
+    nextStep();
+  } else {
+    alert("Please fill in all fields.");
+  }
+}
+
+function submitForm() {
+  const feedbackData = {
+    "rating": document.querySelector('.star-rating').getAttribute('data-rating'),
+    "feedback": document.querySelector('.feedback-options button.active').getAttribute('data-value'),
+    "name": document.getElementById('name').value,
+    "email": document.getElementById('email').value,
+    "phone": document.getElementById('phone').value,
+    "feedbackText": document.getElementById('feedback').value,
+    "suggestions": document.getElementById('suggestions').value
+  };
+  
+  console.log(JSON.stringify(feedbackData));
+  document.getElementById('feedbackForm').reset();
+  currentStep = 1;
+  document.querySelectorAll('.step').forEach(step => {
+    step.style.display = 'none';
+  });
+  document.getElementById('step1').style.display = 'block';
+  document.getElementById('step4').style.display = 'block';
+  setTimeout(function() {
+    document.getElementById('step4').style.display = 'none';
+  }, 5000);
+}
+
+document.querySelectorAll('.star-rating .star').forEach(star => {
+  star.addEventListener('click', function() {
+    const value = parseInt(this.getAttribute('data-value'));
+    const stars = document.querySelectorAll('.star-rating .star');
+    stars.forEach((s, index) => {
+      if (index < value) {
+        s.style.color = '#f0ad4e';
+      } else {
+        s.style.color = '#ccc';
+      }
+    });
+    document.querySelector('.star-rating').setAttribute('data-rating', value.toString());
+  });
+});
+
+document.querySelectorAll('.feedback-options button').forEach(button => {
+  button.addEventListener('click', function() {
+    document.querySelectorAll('.feedback-options button').forEach(b => {
+      b.classList.remove('active');
+    });
+    this.classList.add('active');
+  });
+});
+
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="script.js"></script>
+</body>
+</html>
