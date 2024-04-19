@@ -1,4 +1,7 @@
 
+body{
+  overflow-x: hidden;
+}
  /* .main-header {
     background-color: rgba(253, 252, 252, 0.8);
 }  */
