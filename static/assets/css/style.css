@@ -236,10 +236,10 @@ flip card
 }
 .glass-background {
   padding: 2.5% 1%;
-  background-color:#041c38;
+  background-color:#1C3F5D;
   backdrop-filter: blur(10px);
   border-radius: 10px; 
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 2.5px rgba(255, 255, 255, 0.5);
 }
 
 .swiper {
@@ -251,14 +251,16 @@ flip card
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  max-width: 520px !important;
-  max-height: 400px !important;
+  width: 100%;
+  height: auto;
+  /* max-width: 520px !important;
+  max-height: 400px !important; */
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
-  height:400px;
+  height: 100%;
   border-radius: 10px;
 }
 
