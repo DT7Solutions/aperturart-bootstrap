@@ -455,7 +455,7 @@ https://templatemo.com/tm-557-grad-school
           </div>
         </div>
 
-        <div class="col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6 mb-5">
           <div class="sec-title-wrapper">
             <h2 class="sec-title-3 animation__char_come contact-text text-white">Schedule an hour of Chai-Coffee<br> at Aperturart!</h2>
           </div>
@@ -463,7 +463,7 @@ https://templatemo.com/tm-557-grad-school
             <div class="contact__info adderss-one">
               <h3 class="sub-title-anim-top animation__word_come text-white pb-4 pt-3" style="font-size: 28px; margin-bottom:-18px">Address</h3>
               <ul>
-                <li><span style="text-transform:capitalize;color: white;">4th Floor, Ayyappa Society, <br> Plot No:1303,Madhapur, Hyderabad,<br> Telangana 500081.</span></li>
+                <li><span style="text-transform:capitalize;color: white;">4th Floor, Ayyappa Society, <br> Plot No :1303,Madhapur, Hyderabad,<br> Telangana 500081.</span></li>
               </ul>
             </div>
           </div>
@@ -473,25 +473,25 @@ https://templatemo.com/tm-557-grad-school
           <div class="contact__text10 text-white">
             <h2>We’re excited to hear from your great ideas, and we can’t wait to build with you.</h2>
           </div>
-            <form id="form-submit">
+            <form id="form-submit" method="post">
               <div class="row">
               <div class="col-md-6">
-                <input type="text" id="name" name="name" placeholder="Name" required>
+                <input type="text" id="name" name="name" class="nameform"  placeholder="Name" required>
               </div>
               <div class="col-md-6">
-                <input type="text" id="email" name="email" placeholder="Email" required>
+                <input type="text" id="email" name="email" class="email"  placeholder="Email" required>
               </div>
               <div class="col-md-6">
-                <input type="text" id="phone" name="phone" placeholder="Phone" required>
+                <input type="text" id="phone" name="phone" class="phone" placeholder="Phone" required>
               </div>
               <div class="col-md-6">
-                <input type="text" id="feedback" name="feedback" placeholder="feedback" required>
+                <input type="text" id="feedback" name="feedback" class="feed" placeholder="feedback" required>
               </div>
               <div class="col-md-12">
-                <textarea name="message" id="message" rows="10" cols="5" placeholder="Suggestions"></textarea>
+                <textarea name="message" id="message" rows="3" cols="5" class="suggest" placeholder="suggestions"></textarea>
               </div>
               <div class="col-md-12">
-                <button type="submit" onclick="submitFunction()" id="submit-Form">Send Message</button>
+                <button type="submit" class="button" >Send Message</button>
               </div>
             </div>
             </form>
@@ -808,5 +808,151 @@ https://templatemo.com/tm-557-grad-school
           },
       });
     </script>
+    <!-- <script>
+function sendform(){
+  if (document.getElementById("name").value == "") {
+    alert("Please enter your name");
+    document.getElementById("name").focus();
+    return false;
+}
+
+if (document.getElementById("email").value == "") {
+    alert("Please enter your email address");
+    document.getElementById("email").focus();
+    return false;
+}
+
+if (document.getElementById("phone").value == "") {
+    alert("Please enter your phone number");
+    document.getElementById("phone").focus();
+    return false;
+}
+if (document.getElementById("feedback").value == "") {
+  alert("Please enter  feedback");
+  document.getElementById("feedback").focus();
+  return false;
+}
+if (document.getElementById("message").value == "") {
+    alert("Please enter your message");
+    document.getElementById("message").focus();
+    return false;
+}
+
+var params = {
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+phone: document.getElementById("phone").value,
+feedback: document.getElementById("feedback").value,
+message: document.getElementById("message").value,
+
+};
+const serviceID = "service_acvejvb";
+const templateID = "template_hzgo3kx";
+
+emailjs.send(serviceID, templateID, params)
+.then(res=>{
+document.getElementById("name").value = "";
+document.getElementById("email").value = "";
+document.getElementById("phone").value = "";
+document.getElementById("feedback").value= "";
+document.getElementById("message").value= "";
+console.log(res);
+alert("Your message sent successfully!!")
+
+})
+.catch(err=>console.log(err));
+
+}
+
+    </script> -->
+<script>
+    // Attach the event listener to the form's submit event
+document.getElementById("form-submit").addEventListener("submit", function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+    sendForm(event);
+});
+
+// Updated sendForm function
+function sendForm(event) {
+    // Validation checks
+    if (!validateInput()) {
+        // If validation fails, prevent form submission
+        return false;
+    }
+
+    // Gather parameters
+    var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        feedback: document.getElementById("feedback").value,
+        message: document.getElementById("message").value,
+    };
+
+    // Service and template IDs
+    const serviceID = "service_acvejvb";
+    const templateID = "template_hzgo3kx";
+
+    // Send email using emailjs
+    emailjs.send(serviceID, templateID, params)
+        .then(function(res) {
+            // Clear form fields on success
+            clearFormFields();
+            console.log(res);
+            alert("Your message was sent successfully!");
+        })
+        .catch(function(err) {
+            console.log(err);
+            alert("An error occurred while sending your message. Please try again.");
+        });
+}
+
+// Function to validate input fields
+function validateInput() {
+    // Name validation
+    if (document.getElementById("name").value.trim() === "") {
+        alert("Please enter your name.");
+        document.getElementById("name").focus();
+        return false;
+    }
+
+    // Email validation
+    if (document.getElementById("email").value.trim() === "") {
+        alert("Please enter your email address.");
+        document.getElementById("email").focus();
+        return false;
+    }
+
+    // Phone validation
+    if (document.getElementById("phone").value.trim() === "") {
+        alert("Please enter your phone number.");
+        document.getElementById("phone").focus();
+        return false;
+    }
+
+    // Feedback validation
+    if (document.getElementById("feedback").value.trim() === "") {
+        alert("Please enter your feedback.");
+        document.getElementById("feedback").focus();
+        return false;
+    }
+
+    // Message validation
+    if (document.getElementById("message").value.trim() === "") {
+        alert("Please enter your message.");
+        document.getElementById("message").focus();
+        return false;
+    }
+
+    // All validations passed
+    return true;
+}
+
+// Function to clear form fields
+function clearFormFields() {
+    document.getElementById("form-submit").reset();
+}
+</script>
 </body>
 </html>

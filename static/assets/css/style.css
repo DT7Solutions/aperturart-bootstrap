@@ -424,9 +424,13 @@ flip card
   }
 }
 
-#form-submit ::placeholder{
-  border-bottom: 1px solid white;
-  padding-bottom: 10px;
+.phone,.email ,.nameform,.feed {
+  border-bottom: 1px solid white!important;
+  padding-bottom: 10px!important;
+}
+ .suggest{
+  border-bottom: 1px solid white!important;
+  padding-bottom: 60px!important;
 }
 textarea:is(:focus, :valid){
   width: 100%;
