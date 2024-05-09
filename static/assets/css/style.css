@@ -24,6 +24,7 @@ body{
     color: white !important;
     float: right !important;
 }
+
 .section.why-us {
   padding-bottom: 0px !important;
 }
@@ -419,9 +420,44 @@ flip card
   }
 }
 @media screen and (max-width: 480px) {
+
   .contactform-container {
     margin: 0 0%;
   }
+  .story-telling-last-two-cards{
+    display: block !important;
+  }
+  .packages .card-body ul{
+    display: block !important;
+  }
+  .welcome-text{
+    background-color: #ffffff;
+    color: #000;
+    font-size: 20px;
+    position: absolute;
+    /* width: 250px;  */
+    left: -100px !important;
+    top: 60px !important;
+    transform: rotate(270deg) !important;
+    letter-spacing: 5px;
+  }
+  .about-contnt .about-contnt-title{
+    color: #ffffff !important;
+    text-align: start !important;
+    width: 300px !important;
+    margin-left:50px !important;
+    margin-top: -40px !important;
+  }
+  .about-contnt .about-contnt-paragraph{
+    color: #ffffff;
+    text-align: start;
+    margin-left:50px !important;
+    width: 270px !important;
+    text-align: justify !important;
+    font-size: 18px !important;
+  }
+ 
+
 }
 
 .phone,.email ,.nameform,.feed {
@@ -445,3 +481,101 @@ textarea:is(:focus, :valid){
 #submit-Form{
   border-radius:3px !important;
 }
+.service-title{
+  color: black;
+  text-align: center;
+  background-color: #ffffff;
+  width:max-content;
+  margin: auto;
+  padding: 10px 50px;
+  border-radius: 50px;
+  margin-bottom: 40px;
+}
+.advance-service-list{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.story-telling-last-two-cards{
+ display: flex;
+ justify-content:center;
+ align-items: center;
+ width: 100%;
+}
+
+.package{
+  border: 2px solid #000 !important;
+  height: 100%;
+}
+.package .card-header{
+  background-color:#000;
+  color: #fff;
+  width: 300px;
+  /* margin-top: -5px; */
+  margin-left:-18px;
+  border-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  outline: 3px solid green;
+
+}
+.text-body .text-body-title{
+  text-align: center !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  font-weight: 700 !important;
+}
+.text-body .text-body-paragraph{
+  margin: auto !important;
+  text-align: justify !important;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #000;
+  width: 100%;
+}
+
+.package .card-header .card-title{
+  text-align: center !important;
+}
+
+.card-body ul{
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.packages{
+  border-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  padding: 1px;
+  border: 2px solid black !important;
+}
+.packages .card-header{
+  text-align: center;
+  background-color: #000;
+  color: #ffffff;
+  border-radius: 6px !important;
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  outline: 2px solid green;
+}
+
+.welcome-text{
+  background-color: #ffffff;
+  color: #000;
+  font-size: 20px;
+  position: absolute;
+  width: 250px; 
+  left: -40px;
+  top: 60px;
+  transform: rotate(270deg) !important;
+  letter-spacing: 5px;
+}
+.about-contnt .about-contnt-title, .about-contnt-paragraph{
+  color: #ffffff;
+  text-align: start;
+  margin-left: 120px;
+  width: 600px;
+}
+
