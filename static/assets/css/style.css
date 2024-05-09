@@ -456,6 +456,19 @@ flip card
     text-align: justify !important;
     font-size: 18px !important;
   }
+  .packages .package-7-first-text{
+    width: 180px !important;
+    margin-right:0px !important;
+  }
+  .packages .package-8-first-text{
+    width: 180px !important;
+    margin-right:0px !important;
+  }
+
+  section.courses .owl-carousel .owl-dots {
+    text-align: center;
+    display: none !important;
+}
  
 
 }
@@ -567,7 +580,8 @@ textarea:is(:focus, :valid){
   font-size: 20px;
   position: absolute;
   width: 250px; 
-  left: -40px;
+  height: 30px;
+  left: -70px;
   top: 60px;
   transform: rotate(270deg) !important;
   letter-spacing: 5px;
@@ -577,5 +591,13 @@ textarea:is(:focus, :valid){
   text-align: start;
   margin-left: 120px;
   width: 600px;
+}
+.packages .package-7-first-text{
+  width: 450px;
+  margin-right: 50px !important;
+}
+.packages .package-8-first-text{
+  width: 500px;
+  margin-right: 38px !important;
 }
 

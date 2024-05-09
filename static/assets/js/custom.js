@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	        }
 	    }
 	})
+    
 
 
 	$(".Modern-Slider").slick({
