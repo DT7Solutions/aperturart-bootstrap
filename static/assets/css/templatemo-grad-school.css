@@ -223,6 +223,7 @@ a.menu-link { display: none; }
     color: rgb(43, 42, 42);
     border: 2px solid transparent;
     transition: all 0.5s;
+    color: #ffffff !important;
     
 }
 
