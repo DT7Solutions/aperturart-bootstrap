@@ -495,10 +495,15 @@ flip card
   width: 100% !important;
   height: 40vh !important;
 }
-.nav-active {
+.nav-active{
   background-color:#fff !important;
   z-index: 10000;
 }
+
+.nav-active li a{
+  color:#fff !important;
+}
+
 
 }
 
