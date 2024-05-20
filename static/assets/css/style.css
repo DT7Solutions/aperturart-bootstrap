@@ -493,7 +493,8 @@ flip card
 }
 .main-banner img{
   width: 100% !important;
-  height: 40vh !important;
+  overflow: hidden !important;
+  /* height: 20vh !important */
 }
 .nav-active{
   background-color:#fff !important;
