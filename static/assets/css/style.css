@@ -660,3 +660,18 @@ textarea:is(:focus, :valid){
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out!important;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out!important;
  }
+.modal{
+  margin-top: 60px !important;
+}
+.modal-body input{
+  width: 100% !important;
+  padding: 12px !important;
+  margin-bottom: 15px !important;
+  border-radius: 5px !important;
+  overflow: hidden !important;
+  border: 1px solid #aaa;
+}
+.login-btn{
+  background-color: #000;
+  color: #fff;
+}
