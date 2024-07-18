@@ -305,3 +305,5 @@ document.querySelectorAll('input[type="text"], input[type="email"], input[type="
         errorMessage.style.display = 'none';
     });
 });
+
+

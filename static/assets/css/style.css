@@ -660,18 +660,65 @@ textarea:is(:focus, :valid){
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out!important;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out!important;
  }
+
+
+
+
+
+ /* =============================================== popup form ================================================ */
 .modal{
   margin-top: 60px !important;
 }
+
 .modal-body input{
   width: 100% !important;
-  padding: 12px !important;
-  margin-bottom: 15px !important;
-  border-radius: 5px !important;
+  margin-bottom: 25px !important;
   overflow: hidden !important;
-  border: 1px solid #aaa;
+  border: 0px solid !important;
+  border-bottom: 1px solid #aaa !important;
+
 }
-.login-btn{
+.modal-body input:focus{
+ outline: none !important;
+}
+.modal-body #selecttype{
+  border: 0px solid !important;
+  border-bottom: 1px solid #aaa !important;
+  width: 100% !important;
+  color:gray !important;
+  padding-bottom: 10px !important;
+  font-family: inherit !important;
+}
+.modal-body textarea{
+  width: 100%;
+  height: 70px !important;
+  border: 0px solid !important;
+  border-bottom: 1px solid #aaa !important;
+}
+.modal-body textarea:focus{
+  outline:none !important;
+}
+.modal-body .sendbtn{
+  width: 100%;
   background-color: #000;
-  color: #fff;
+  color: #ffffff;
+  padding: 15px !important;
+  margin-top: 15px !important;
+}
+.pop-form:hover{
+  border: 0px !important;
+  outline: 0px !important;
+}
+.modal-header{
+  border-bottom: none !important;
+}
+
+@media(min-width:300px) and (max-width:480px){
+  .modal{
+    margin-top: 120px !important;
+    height: auto !important;
+  }
+  .modal-body textarea{
+    margin-top: 25px !important;
+  }
 }
