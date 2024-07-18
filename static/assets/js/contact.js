@@ -83,22 +83,50 @@ function validateMessage(message) {
 function sendMessage() {
     // Get form data
     var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
+    // var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
     var selecttype = document.getElementById('selecttype').value;
     var message = document.getElementById('message').value;
 
     // Validate form data
-    if (!validateName(name) || !validateEmail(email) || !validatePhone(phone) || !validateSelectType(selecttype) || !validateMessage(message)) {
-        return;
+    // if (!validateName(name) || !validateEmail(email) || !validatePhone(phone) || !validateSelectType(selecttype) || !validateMessage(message)) {
+    //     return;
+    // }
+    var package_type = '';
+    switch(selecttype) {
+        case '1':
+            package_type = 'package-1';
+            break;
+        case '2':
+            package_type = 'package-2';
+            break;
+        case '3':
+            package_type = 'package-3';
+            break;
+        case '4':
+            package_type = 'package-4';
+            break;
+        case '5':
+            package_type = 'package-5';
+            break;
+        case '6':
+            package_type = 'package-6';
+            break;
+        case '7':
+            package_type = 'package-7';
+            break;
+        case '8':
+            package_type = 'package-8';
+            break;
+        default:
+            alert('Invalid package type selected.');
+            return;
     }
-
-    // Form data object
+   
     var formData = {
         name: name,
-        email: email,
         phone: phone,
-        selecttype: selecttype,
+        selecttype: package_type,
         message: message
     };
 
@@ -159,3 +187,20 @@ function validateMessage(message) {
 
 
 
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.btn-pack');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        const packageId = this.getAttribute('data-package-id');
+        updateModalForm(packageId);
+      });
+    });
+
+    function updateModalForm(packageId) {
+      const selectType = document.getElementById('selecttype');
+      selectType.value = packageId;
+    //   selectType.innerHTML = `<option value="${packageId}">${packageId}</option>`;
+    }
+
+});
