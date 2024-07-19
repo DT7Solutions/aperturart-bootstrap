@@ -205,12 +205,3 @@ function validateMessage(message) {
     }
 
 });
-
-
-
-function closeModal() {
-    var modal = document.getElementById('myModal');
-    if (modal) {
-        modal.style.display = 'none';
-    }
-}
