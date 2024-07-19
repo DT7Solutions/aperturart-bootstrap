@@ -83,6 +83,7 @@ function validateMessage(message) {
 function sendMessage() {
     // Get form data
     var name = document.getElementById('name').value;
+    var connect_time = document.getElementById('connect_time').value;
     var phone = document.getElementById('phone').value;
     var selecttype = document.getElementById('selecttype').value;
     var message = document.getElementById('message').value;
@@ -125,6 +126,7 @@ function sendMessage() {
     var formData = {
         name: name,
         phone: phone,
+        timeTOtalk: connect_time,
         selecttype: package_type,
         message: message
     };
