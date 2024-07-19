@@ -83,7 +83,6 @@ function validateMessage(message) {
 function sendMessage() {
     // Get form data
     var name = document.getElementById('name').value;
-    // var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
     var selecttype = document.getElementById('selecttype').value;
     var message = document.getElementById('message').value;
@@ -136,6 +135,7 @@ function sendMessage() {
             console.log('SUCCESS!', response.status, response.text);
             alert('Message sent successfully!');
             document.getElementById("form-send").reset();
+            closeModal();
         }, function(error) {
             console.log('FAILED...', error);
             alert('Failed to send message.');
@@ -200,7 +200,15 @@ function validateMessage(message) {
     function updateModalForm(packageId) {
       const selectType = document.getElementById('selecttype');
       selectType.value = packageId;
-    //   selectType.innerHTML = `<option value="${packageId}">${packageId}</option>`;
     }
 
 });
+
+
+
+function closeModal() {
+    var modal = document.getElementById('myModal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
