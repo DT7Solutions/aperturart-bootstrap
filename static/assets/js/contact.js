@@ -89,9 +89,9 @@ function sendMessage() {
     var message = document.getElementById('message').value;
 
     // Validate form data
-    // if (!validateName(name) || !validateEmail(email) || !validatePhone(phone) || !validateSelectType(selecttype) || !validateMessage(message)) {
-    //     return;
-    // }
+    if (!validateName(name) || !validateEmail(email) || !validatePhone(phone) || !validateSelectType(selecttype) || !validateMessage(message)) {
+        return;
+    }
     var package_type = '';
     switch(selecttype) {
         case '1':
