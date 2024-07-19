@@ -135,7 +135,7 @@ function sendMessage() {
             console.log('SUCCESS!', response.status, response.text);
             alert('Message sent successfully!');
             document.getElementById("form-send").reset();
-            closeModal();
+            $('#myModal').modal('hide'); 
         }, function(error) {
             console.log('FAILED...', error);
             alert('Failed to send message.');
