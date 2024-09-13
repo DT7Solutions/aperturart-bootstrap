@@ -1,0 +1,3 @@
+User Agent: *
+Disallow:
+Sitemap:https://aperturart.com/sitemap.xml
